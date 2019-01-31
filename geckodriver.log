@@ -1,0 +1,82 @@
+1548366419903	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.S6ggXja6MMC1"
+1548366420293	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548366420293	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548366422211	Marionette	INFO	Listening on port 37549
+1548366422227	Marionette	WARN	TLS certificate errors will be ignored for this session
+1548366439823	Marionette	INFO	Stopped listening on port 37549
+1548366443052	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Ogr2ypYl2uYa"
+1548366443357	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548366443357	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548366445029	Marionette	INFO	Listening on port 34179
+1548366445064	Marionette	WARN	TLS certificate errors will be ignored for this session
+1548366487740	Marionette	INFO	Stopped listening on port 34179
+1548366493330	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.lBSQpzpIuid9"
+1548366493638	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548366493638	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548366495427	Marionette	INFO	Listening on port 45125
+1548366495436	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: moz-extension://d805ed5a-5b95-444f-b09a-0e346dd7b21d/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+JavaScript error: moz-extension://d805ed5a-5b95-444f-b09a-0e346dd7b21d/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+1548366526083	Marionette	INFO	Stopped listening on port 45125
+1548366974846	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.nSsyE6IafQEd"
+1548366975155	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548366975155	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548366976867	Marionette	INFO	Listening on port 43011
+1548366976919	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: moz-extension://bbe0662f-5535-43eb-9c29-23f72fd576be/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+JavaScript error: moz-extension://bbe0662f-5535-43eb-9c29-23f72fd576be/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+1548367046598	Marionette	INFO	Stopped listening on port 43011
+1548367271106	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.4ywDE9Lzb7q8"
+1548367271479	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548367271480	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548367273552	Marionette	INFO	Listening on port 43761
+1548367273629	Marionette	WARN	TLS certificate errors will be ignored for this session
+1548367273642	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","ftpProxy":"localhost:8080","httpProxy":"localhost:8080","sslProxy":"localhost:8080"}
+JavaScript error: moz-extension://9456bfc8-7cfa-4cfd-ac37-19a20b5faeb6/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+JavaScript error: moz-extension://9456bfc8-7cfa-4cfd-ac37-19a20b5faeb6/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+1548367282842	Marionette	INFO	Stopped listening on port 43761
+1548367683548	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.B73QGKZUT94T"
+1548367683883	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548367683883	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548367685670	Marionette	INFO	Listening on port 40035
+1548367685837	Marionette	WARN	TLS certificate errors will be ignored for this session
+1548367685864	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","ftpProxy":"localhost:8080","httpProxy":"localhost:8080","sslProxy":"localhost:8080"}
+JavaScript error: moz-extension://bccc981b-9cec-4654-9c28-e5cac4b4ea77/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+JavaScript error: moz-extension://bccc981b-9cec-4654-9c28-e5cac4b4ea77/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+1548367694066	Marionette	INFO	Stopped listening on port 40035
+1548367849494	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.xfr4oAwvXx04"
+1548367849805	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548367849805	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548367851691	Marionette	INFO	Listening on port 42831
+1548367851761	Marionette	WARN	TLS certificate errors will be ignored for this session
+1548367851771	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","ftpProxy":"localhost:8080","httpProxy":"localhost:8080","sslProxy":"localhost:8080"}
+JavaScript error: moz-extension://820b7137-485d-4355-a4c6-20b6b3daa15c/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+JavaScript error: moz-extension://820b7137-485d-4355-a4c6-20b6b3daa15c/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+1548367859527	Marionette	INFO	Stopped listening on port 42831
+1548368106439	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.s1Q8ULXtdYFE"
+1548368106746	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548368106746	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548368108502	Marionette	INFO	Listening on port 45829
+1548368108602	Marionette	WARN	TLS certificate errors will be ignored for this session
+1548368108625	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","ftpProxy":"localhost:8080","httpProxy":"localhost:8080","sslProxy":"localhost:8080"}
+JavaScript error: moz-extension://6a0f4474-085f-4a92-a83d-50e2f2973922/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+JavaScript error: moz-extension://6a0f4474-085f-4a92-a83d-50e2f2973922/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+1548368115074	Marionette	INFO	Stopped listening on port 45829
+1548368131128	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.7h0Jo71fe3s8"
+1548368131433	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548368131433	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548368133092	Marionette	INFO	Listening on port 43995
+1548368133099	Marionette	WARN	TLS certificate errors will be ignored for this session
+1548368133104	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","ftpProxy":"localhost:8080","httpProxy":"localhost:8080","sslProxy":"localhost:8080"}
+JavaScript error: moz-extension://a768d371-d247-4bb0-978f-13fea241e617/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+JavaScript error: moz-extension://a768d371-d247-4bb0-978f-13fea241e617/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+1548368139186	Marionette	INFO	Stopped listening on port 43995
+1548368168143	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.70Gr6tLAWQoT"
+1548368168453	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548368168453	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548368170187	Marionette	INFO	Listening on port 43041
+1548368170293	Marionette	WARN	TLS certificate errors will be ignored for this session
+1548368170326	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","ftpProxy":"localhost:8080","httpProxy":"localhost:8080","sslProxy":"localhost:8080"}
+JavaScript error: moz-extension://9e429849-d0ec-49c0-8ad7-f70e0181a32d/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+JavaScript error: moz-extension://9e429849-d0ec-49c0-8ad7-f70e0181a32d/js/hntrie.js, line 502: TypeError: first argument must be a WebAssembly.Module, ArrayBuffer or typed array object
+1548368176453	Marionette	INFO	Stopped listening on port 43041
