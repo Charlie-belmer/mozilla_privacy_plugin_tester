@@ -1,0 +1,7 @@
+addons/*
+*.tar.gz
+report.json
+crawler/plugins.json
+*.pyc
+geckodriver.log
+*__pycache__*

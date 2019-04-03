@@ -10,7 +10,8 @@ selenium = "*"
 python-owasp-zap-v2-4 = "*"
 scrapy = "*"
 ipython = "*"
-psycopg2 = "*"
+psycopg2-binary = "*"
+bs4 = "*"
 
 [requires]
 python_version = "3.6"

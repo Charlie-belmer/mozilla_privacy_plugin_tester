@@ -8,7 +8,7 @@ class MozillaAddonsSpider(scrapy.Spider):
     start_urls = ['https://addons.mozilla.org/en-US/firefox/search/?sort=users']
     custom_settings = {
         'DOWNLOAD_DELAY': 1,
-        'USER_AGENT': "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0"
+        'USER_AGENT': "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/66.0"
     }
     min_users = 1000
 
@@ -29,7 +29,10 @@ class MozillaAddonsSpider(scrapy.Spider):
             request.meta['details'] = plugin_details
             yield request
 
-        print(smallest_count)    
+        print("--------------------------------------")
+        print("- min user count found: " + str(smallest_count))
+        print("- stopping at threshold: " + str(self.min_users))   
+        print("--------------------------------------")
         if smallest_count > self.min_users:
             print(".....Opening next page........")
             next_page = response.css('.Paginate-item--next').xpath('@href').extract()[0]

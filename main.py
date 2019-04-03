@@ -1,34 +1,77 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+import argparse
+from plugin_ingestor import ingest_plugins
+from db import get_plugins_to_test, pull_report
+from plugin_tester import test_plugin
+import random
+import time
+import json
+from bs4 import BeautifulSoup
 
-from zapv2 import ZAPv2
-target = 'http://127.0.0.1'
-api_key = "58b3r23uoggmchnsu2jg7mfcdl"
-localProxy = {"http": "http://127.0.0.1:8080", "https": "http://127.0.0.1:8080"}
-zap = ZAPv2(proxies=localProxy, apikey=api_key)
-core = zap.core
-core.new_session(name="nice_test", overwrite=True)
+parser = argparse.ArgumentParser(description="Find and test Firefox plugins for data privacy")
+parser.add_argument("-c", "--crawl", action='store_true', help="Crawl Mozilla plugin repo for all plugins")
+parser.add_argument("-i", "--ingest", action='store_true', help="Ingest any plugins in found via crawling into the database")
+parser.add_argument("-t", "--test", action='store_true', help="Test all plugins whose test results are out of date")
+parser.add_argument("-r", "--report", action='store_true', help="Generate a report in json of all results")
 
-proxyString = "localhost:8080"
+args = parser.parse_args()
+args = vars(args)
 
-desired_capability = webdriver.DesiredCapabilities.FIREFOX
-desired_capability['proxy'] = {
-    "proxyType": "manual",
-    "httpProxy": proxyString,
-    "ftpProxy": proxyString,
-    "sslProxy": proxyString
-}
-binary = "/usr/bin/firefox"
-driver = webdriver.Firefox(firefox_binary=binary, executable_path='./geckodriver', capabilities=desired_capability)
-extension_path = "/home/shade/projects/extension-test/addons/ublock_origin-1.18.0-an+fx.xpi"
-ext_id = driver.install_addon(extension_path, temporary=True)
-driver.get("http://www.python.org")
-assert "Python" in driver.title
-elem = driver.find_element_by_name("q")
-elem.clear()
-elem.send_keys("pycon")
-elem.send_keys(Keys.RETURN)
-assert "No results found." not in driver.page_source
-driver.close()
-import pdb;pdb.set_trace()
-print(core.sites) # list of all sites visited!
+min_delay = 5
+max_delay = 20
+
+def ingest():
+    ingest_plugins()
+
+def test():
+    plugins = get_plugins_to_test()
+    average_delay = (min_delay + max_delay / 2)
+    completed = 0
+    for plugin in plugins:
+        print("Testing plugin " + plugin["name"] + "...")
+        test_plugin(plugin["name"], plugin["url"], plugin["icon_url"], plugin["id"])
+
+        # Random delay to limit liklihood of getting disconnects from firefox store
+        delay = random.randint(5, 20) 
+        completed += 1
+        time_left = ((min_delay + max_delay / 2) + 15 ) / 60 * (len(plugins) - completed)
+        print("--------------------------------------------------------------------")
+        print("- Sleeping for " + str(delay) + " seconds (to limit abuse detection)")
+        print("- Tested " + str(completed) + " plugins out of " + str(len(plugins)))
+        print("- Approximate testing time remaining: " + str(time_left) + " minutes.")
+        print("--------------------------------------------------------------------")
+        time.sleep(delay)
+
+def crawl():
+    print("Crawl not yet implemented.")
+    print("Use the manual invocation:")
+    print("scrapy crawl privacy_monitor -o plugins.json")
+
+
+def sanitize_html(value):
+    VALID_TAGS = ['table', 'em', 'p', 'tr', 'th', 'td', 'br']
+    soup = BeautifulSoup(value)
+
+    for tag in soup.findAll(True):
+        if tag.name not in VALID_TAGS:
+            tag.hidden = True
+
+    return soup.renderContents()
+
+def report():
+    outfile = "report.json"
+    data = pull_report()
+    for row in data:
+        row['requests'] = row['requests'].replace('\r\n', "<br />")
+        row['requests'] = str(sanitize_html(row['requests']), 'UTF8')
+    with open(outfile, 'w') as f:
+        f.write(json.dumps(data))
+
+if __name__ == "__main__":
+    if args["crawl"]:
+        crawl()
+    if args["ingest"]:
+        ingest()
+    if args["test"]:
+        test()
+    if args["report"]:
+        report()
