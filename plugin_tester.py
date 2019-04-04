@@ -61,12 +61,20 @@ def download_plugin(name, url, icon_url):
 
 def test_plugin_requests(extension_path):
     """Load a clean browser with the extension, and visit some pages through the proxy"""
-    core.new_session(name="plugin_test", overwrite=True)
     driver = webdriver.Firefox(firefox_binary=binary, executable_path='./geckodriver', capabilities=desired_capability)
     try:
         ext_id = driver.install_addon(extension_path, temporary=True)
+        # Plugin may load "welcome" page, which we don't want to include here.
+        time.sleep(5) # Give page time to load
+        if len(driver.window_handles) > 1:
+            for handle in driver.window_handles[1:]:
+                driver.switch_to_window(handle)
+                driver.close()
+        driver.switch_to_window(driver.window_handles[0])
+        # Now that we have closed any possible welcome pages, start tracking new URL's
+        core.new_session(name="plugin_test", overwrite=True)
+
         for test in test_site_list:
-            import pdb;pdb.set_trace()
             if "url" in test.keys():
                 driver.get(test["url"])
     except WebDriverException as e:
