@@ -239,7 +239,7 @@ SELECT
     tests.last_test_date
 FROM 
     plugin_repository repo,
-    test_results tests,
+    test_results tests LEFT OUTER JOIN
     (SELECT 
         url_findings.test_id as test_id,
         '<tr><td>' || url_findings.url || '</td></tr><tr><td>' || messages.header || '</td></tr><tr><td>' || messages.body || '</td></tr>' as d
@@ -248,11 +248,10 @@ FROM
         test_messages messages
      WHERE
         messages.url_id = url_findings.id
-    ) findings
+    ) findings ON findings.test_id = tests.id
     
 WHERE
     tests.plugin = repo.id AND
-    findings.test_id = tests.id AND
     tests.last_test_date IS NOT NULL
 GROUP BY
     repo.name, 

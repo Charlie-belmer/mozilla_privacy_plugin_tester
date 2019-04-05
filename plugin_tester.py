@@ -37,7 +37,7 @@ binary = "/usr/bin/firefox"
 test_site_list = [
     {"url": "https://www.wikipedia.org", "exclude_patterns": [".*\.wikipedia\.org"]},
     {"url": "https://duckduckgo.com", "exclude_patterns": [".*\.duckduckgo\.com", "https://duckduckgo.com"]},
-    {"exclude_patterns": [".*\.firefox\.com", ".*\.mozilla\.com", ".*\.mozilla\.net", ".*\.mozilla\.org"]}
+    {"exclude_patterns": [".*\.firefox\.com", ".*\.mozilla\.com", ".*\.mozilla\.net", ".*\.mozilla\.org". "*safebrowsing\.googleapis\.com"]}
 ]
 
 def download_plugin(name, url, icon_url):

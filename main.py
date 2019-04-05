@@ -61,8 +61,9 @@ def report():
     outfile = "report.json"
     data = pull_report()
     for row in data:
-        row['requests'] = row['requests'].replace('\r\n', "<br />")
-        row['requests'] = str(sanitize_html(row['requests']), 'UTF8')
+        if row['requests'] is not None:
+            row['requests'] = row['requests'].replace('\r\n', "<br />")
+            row['requests'] = str(sanitize_html(row['requests']), 'UTF8')
     with open(outfile, 'w') as f:
         f.write(json.dumps(data))
 
