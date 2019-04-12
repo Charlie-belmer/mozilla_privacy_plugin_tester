@@ -227,42 +227,42 @@ def insert_plugin(plugin):
 
 def pull_report():
     query = """
-SELECT 
-    repo.name, 
-    repo.author, 
-    repo.version, 
-    repo.users, 
-    tests.icon_path, 
-    count(findings.test_id) as total_requests,
-    '<table>' || string_agg(findings.d, '') || '</table>' as urls, 
-    repo.last_plugin_update, 
-    tests.last_test_date
-FROM 
-    plugin_repository repo,
-    test_results tests LEFT OUTER JOIN
-    (SELECT 
-        url_findings.test_id as test_id,
-        '<tr><td>' || url_findings.url || '</td></tr><tr><td>' || messages.header || '</td></tr><tr><td>' || messages.body || '</td></tr>' as d
-     FROM 
-        test_results_urls url_findings,
-        test_messages messages
-     WHERE
-        messages.url_id = url_findings.id
-    ) findings ON findings.test_id = tests.id
-    
-WHERE
-    tests.plugin = repo.id AND
-    tests.last_test_date IS NOT NULL
-GROUP BY
-    repo.name, 
-    repo.author, 
-    repo.version, 
-    repo.users, 
-    tests.icon_path, 
-    repo.last_plugin_update, 
-    tests.last_test_date
-ORDER BY
-    repo.users DESC
+        SELECT 
+            repo.name, 
+            repo.author, 
+            repo.version, 
+            repo.users, 
+            tests.icon_path, 
+            count(findings.test_id) as total_requests,
+            '<table>' || string_agg(findings.d, '') || '</table>' as urls, 
+            repo.last_plugin_update, 
+            tests.last_test_date
+        FROM 
+            plugin_repository repo,
+            test_results tests LEFT OUTER JOIN
+            (SELECT 
+                url_findings.test_id as test_id,
+                '<tr><td>' || url_findings.url || '</td></tr><tr><td>' || messages.header || '</td></tr><tr><td>' || encode(messages.body, 'escape') || '</td></tr>' as d
+             FROM 
+                test_results_urls url_findings,
+                test_messages messages
+             WHERE
+                messages.url_id = url_findings.id
+            ) findings ON findings.test_id = tests.id
+            
+        WHERE
+            tests.plugin = repo.id AND
+            tests.last_test_date IS NOT NULL
+        GROUP BY
+            repo.name, 
+            repo.author, 
+            repo.version, 
+            repo.users, 
+            tests.icon_path, 
+            repo.last_plugin_update, 
+            tests.last_test_date
+        ORDER BY
+            repo.users DESC
     """
     conn = pool.getconn()
     cur = conn.cursor()
