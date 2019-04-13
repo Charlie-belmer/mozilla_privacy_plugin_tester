@@ -63,7 +63,7 @@ def report():
     for row in data:
         if row['requests'] is not None:
             row['requests'] = row['requests'].replace('\r\n', "<br />")
-            row['requests'] = str(sanitize_html(row['requests']), 'UTF8')
+            row['requests'] = str(sanitize_html(row['requests']), 'UTF8')   #strip anything that might execute
     with open(outfile, 'w') as f:
         f.write(json.dumps(data))
 
